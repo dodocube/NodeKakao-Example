@@ -5,5 +5,5 @@
 # session_info
 let session_info;
 
-/*loginRes 선언후 accessToken-UUID형식*/
+loginRes 선언후 accessToken-UUID형식
 session_info = `${loginRes.result.accessToken}-${loginRes.result.deviceUUID}`;
