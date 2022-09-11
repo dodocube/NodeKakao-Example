@@ -10,12 +10,11 @@
           Authorization: session_info,
         },
       };
+      
       request.post(options, function (error, response, body) {
         //callback
-        try {
-          
-		  console.log(body)
-		  
+        try { 
+	 console.log(body)	  
           var sor = body["data"];
         } catch (err) {
           chat.replyText("[ 경고 ] 올바른 소스를 입력하세요");
