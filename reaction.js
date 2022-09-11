@@ -1,4 +1,4 @@
-	async function reaction(chat, logId, type) {  //type은 6까지
+async function reaction(chat, logId, type) {  //type은 6까지
     let reactionRes = await axios.post(`https://talk-pilsner.kakao.com/messaging/chats/${chat.channel.id}/bubble/reactions`, {"logId": logId, "type": type}, {
         headers: { 
             'Content-Type': 'application/json; charset=UTF-8',
@@ -13,9 +13,9 @@
 }
 
 
-	if(Text.startsWith("!공감 ")) {
-		var type = parseInt(Text.split(" ")[1]);
-		if(type>6) return;
-		if (chat.channel.isOpenChat()) return;
-		 reaction(chat, String(chat.logId), type);
-	}
+if(Text.startsWith("!공감 ")) {
+var type = parseInt(Text.split(" ")[1]);
+  if(type>6) return;
+  if (chat.channel.isOpenChat()) return;
+reaction(chat, String(chat.logId), type);
+}
